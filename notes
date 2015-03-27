@@ -1,3 +1,11 @@
+3/27/15
+git pretty options:
+	git log --pretty=oneline --max-count=2
+	git log --pretty=oneline --since='5 minutes ago'
+	git log --pretty=oneline --until='5 minutes ago'
+	git log --pretty=oneline --author=<your name>
+	git log --pretty=oneline --all
+
 2/4/14
 
 dir is the equivalent to ls in the cmd window
