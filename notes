@@ -1,4 +1,12 @@
+4/12/15
+created .vimrc and turned on syntax highlighting
+	set noswapfile could also be added but I'm holding off for now
+
+
+
 3/27/15
+*did not set up general terminal aliases - not sure where it goes for iterm*
+
 git pretty options:
 	git log --pretty=oneline --max-count=2
 	git log --pretty=oneline --since='5 minutes ago'
