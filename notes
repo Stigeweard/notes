@@ -1,102 +1,410 @@
+5/29/15
+	tried to deploy on bluemix; couldnt get it up
+		applications:
+		- disk_quota: 1024M
+		  host: dapper-dingos
+		  name: dapper-dingos
+		  command: node server.js
+		  path: .
+		  domain: mybluemix.net
+		  instances: 1
+		  memory: 512M
+
+	(manifest.yml)
+
+5/28/15
+	GIT
+		rebase
+			for your feature: goes commit by commit and changes the base, notifying of merge conflicts along the way
+
+		stash
+			store away changes
+			bring back with stash pop
+
+		to sync w/ master:
+			git fetch origin
+			git rebase origin/master(github master branch)
+
+		merge -> use mergetool, left side (LOCAL) is current branch
+			git rebase --continue (don't commit)
+			save, then quit (don't x out)
+			then git add, git commit (don't add message bc git does it for you)
+
+			git push origin feature (--force if still merge conflicts, replaces remote branch w/ yours)
+
+
+		branches are 'pointers'
+
+
+5/22/15
+	TASK RUNNERS & BUILD SYSTEMS
+		like gulp, 
+
+		must consider:
+			environment code is run in
+			database
+
+			
+	HEROKU
+		heroku create - creates git remote
+
+
+
+5/20/15
+	BEGINNING OF ANGULAR SPRINT
+
+	DEPENDENCY INJECTION
+
+	DIRTY CHECKING
+		angular tracks previous value of any model used in a template "dirty" means that data has changed from a prev val
+
+	weird robot example
+		angular = race
+		angular.module('app', [])
+			first arg - team, second is an array of requirements
+		.controller - car
+
+	A MODULE contains the different components of an AngularJS app
+	A CONTROLLER manages the app's data
+	An EXPRESSION displays values on the page
+	A FILTER formats the value of an expression
+
+5/18/15
+	
+	ENCRYPTION : constantly evolving
+
+	SQL lite - useful to reduce friction
+
+	bcrypt, sha1, x - types of hashing
+		bcrypt is slow by design
+
+5/15/15
+	
+	VARIABILITY MUST BE EXPRESSED IN NUMBER OF ROWS- NOT COLUMNS
+
+	SCHEMA DESIGN
+		1:many vs many:many  _
+											\_/ `-> Join tables -> can be thought of like a grid with x/y being students/classes but space ineff: so the table is like a list of coordinates
+		primary keys
+
+
+
+	Key-value/Document store: 
+	
+	Graph databases - a lot of web apps need this type (social)
+		nodes, edges
+			nodes - bundles of info
+			edges - connections between nodes
+
+	CRUD - 4 general operations that any database needs
+		create, read, update, delete
+			many databases have protocols for all of these necessities
+
+	ACID
+		atomicity, consistency, isolation, durability
+
+	sharding must be done with a method so that you know where segments of data are being sharded to
+
+	BE SCRIBEY WITH DATABASE SYSTEMS  -  specifically which DB's are slow
+	
+	atamicity - all or nothing ? esque (bank database problem - don't wanna update halves of data at the time) - we can bundle together and trust all interactions or they wont occur
+			http://en.wikipedia.org/wiki/Atomicity_%28database_systems%29
+
+	Mutex / semaphore?
+
+	SQL - not coupled with technology, it is implemented in different database models (mySQL, Postgres, Oracle, Informix)
+
+	SQL - Databases sprint day 1
+
+			suppposed to be close to plain english "SELECT name FROM users WHERE age=30"
+				declarative language (vs imperative - javascript)
+
+
+5/13/15
+
+  SQL vs Mongo (vs Neo4j/OrientDB)
+
+    SQL - (Postgres, MySQL)
+      good for joining relationships between data
+      has id's for each type of entry 
+      join querey (grab all users who are members of purple penguins)
+        SELECT people.name FROM people JOIN clubs ON person_id
+      one query for all data (with built relationships)
+
+      noSQL uses uuid - which generates a long random string of chars as a unique identifier -- as opposed to sequential incrementation
+
+    Mongo - (CouchDB) - Document [Store] databases
+      may have multiple queries
+
+    Neo4j, OrientDB - Graph Databases
+      truly optimized for joining relationships between data
+      friends of friends
+
+	regex
+  	"_abc".match(/a(b)c/)
+  	"_abbbbbbbbc".match(/a(b+)c/)
+  	"/rooms/public".match(/^\/rooms\/([a-z]+)/)
+      *  ["rooms/public", "public"]
+
+
+	process.env.PORT  -  way to access a port number defined in environment(like in the terminal)
+
+	adding an ampersand & to the end of a server run will make it run in the background
+
+	bind(func, null, "foo")  <-- binding null as context is equivalent to setting the context to window (global scope)
+
+	firechat? - mesh network. (doesn't require internet, just requires other nearby devices)
+
+5/8/15
+
+	Questions: 
+		purpose of wrapping code modules in anonymous functions?
+		User stories?
+		m.prop will convert the target into a function that acts as a storage?
+
+
+	Gilbert's mithril lecture(beginning of sprint)
+
+		m('button', )
+
+		DOM Diffing - check data to see what changed, then only updates relevant DOM elements 
+		(as opposed to the "flicker" effect which empties entire page and re-renders)
+
+		Mithril: Virtual DOM - DOM Diffing built-in
+			auto updates DOM when data changes
+			classical ModelViewController structure
+
+			$('<div>').addClass('item').text('Item #1')        vs        m('.item', "Item #1")
+
+			Virtual DOM - builds elements as plain JS object that represents a DOM element
+
+			Controller only initializes once
+
+			mount will initialize controller and run your view - in his example it was in the html, m.mount(document.getElementById('app'), PetShop)
+			every mount call will initialize a controller (different instances)
+
+			will render all views but it only deals with objects, not the DOM. (still fast)
+
+			var hobby = m.prop()
+			hobby('x')
+			"x"
+			hobby()
+			"x"
+			hobby('something')
+			"something"
+			hobby()
+			"something"
+
+
+			Ways to break mithril:
+				ctrl.shop = m.request({ method: 'GET', url: 'url here', blahblahblahblah})
+				ctrl.shop = m.prop
+
+
+
+5/6/15
+	backbone afternoon lecture:
+		keywords:
+			model:
+				acts as a source of truth about not-yet-visuaized data
+				intervenes on prop access by getters and setters
+			collection:
+				arraylike
+			view:
+				glorified DOM
+		tagName: 'tr',
+		template: _.template('<td> blahblah </td>')
+
+5/4/15
+	HTTP: server's name handled by DNS(domain name service)
+		upon entering google.com in browser, client makes a request to DNS which points to server
+		this request is known as an HTTP request (HTTP GET / HOST: google.com)
+		HTTP Response 
+			everything sent back and forth is just text
+			2 most important things:
+				-body
+				-status:
+					400 - my mistake
+					500 - server has a bug
+		Postman - app that helps visualize HTTP requests
+		METHOD + URL
+		GET /
+		GET /profile
+		GET /users/timmy
+		
+		POST /profile
+		title=my%20Post&author=me
+		{ "title": "my Post", "author": "me" }
+
+		PUT /profile
+			-updates
+
+		DELETE 
+			usually req's authorization
+
+		GET /profile and POST /profile are different endpoints(method + url)
+
+5/1/15
+	D3 sprint beginning
+		D3 bindings can accept callback fn's in data attribute that it auto generates(jquery cannot)
+		D3 can add more data to the page than there are nodes to attach the data to
+		general update pattern (enter/exit) 
+			enter subselects data/node pairs that have no nodes and will designate placement based off of parent
+			append needs an argument for what to make
+			.text(function(d) {return 'hello ' + d}) // d will be data in existing node
+			every callback used in d3 has the data as first argument by default
+			this is the dom node
+
+4/30/15
+	n-Queens solution:
+		(rooks):
+			consider rows - systematic approach:
+				fred emphasized undoing toggle between trying the next position
+				find solution inner fn - increments counter
+				recursive functions should be split in two - base case and propagation(decision)
+				board.hasAnyRooks... --> board[validator]
+
+
+
+
+4/27/15
+	Object Oriented Programming (beginnging of dance party sprint)
+		-key is the concept of ENCAPSULATION
+
+	pseudoclassical style:
+		var Car = function(loc) {
+			this.loc = loc;
+		}
+		Car.prototype.move = function() {
+			this.loc++;
+		}
+		var Van = function(loc) {
+			Car.call(this, loc) /* sets this to van instead of car */
+		}
+		Van.prototype = Object.create(Car.prototype); /* sets van prototype to be a copy of the Car prototype */
+		Van.prototype.constructor = Van; /* previous step does not set the .constructor value? */
+		/* now ready to add methods to Van.prototype */
+
+
+4/22/15
+	Data structures
+	Interfaces:
+		queue (FIFO - first in first out):
+			methods: enqueue, dequeue, head
+		stack (LIFO - last in first out, only access to the "plate" on top):
+			methods: push, pop, peek
+
+	shift() on an array is inefficient (with long arrays) because it needs to reassign all 
+
+	*Also added sublime command to terminal ()
+
+4/20/15
+	cmd-ctrl up/down = shifts current line
+	ctrl m = jump between brackets
+	crl g = jump to line
+	cmd l = select line
+
+
+
 4/12/15
-created .vimrc and turned on syntax highlighting
-	set noswapfile could also be added but I'm holding off for now
+	created .vimrc and turned on syntax highlighting
+		set noswapfile could also be added but I'm holding off for now
 
 
 
 3/27/15
-*did not set up general terminal aliases - not sure where it goes for iterm*
+	*did not set up general terminal aliases - not sure where it goes for iterm*
 
-git pretty options:
-	git log --pretty=oneline --max-count=2
-	git log --pretty=oneline --since='5 minutes ago'
-	git log --pretty=oneline --until='5 minutes ago'
-	git log --pretty=oneline --author=<your name>
-	git log --pretty=oneline --all
+	git pretty options:
+		git log --pretty=oneline --max-count=2
+		git log --pretty=oneline --since='5 minutes ago'
+		git log --pretty=oneline --until='5 minutes ago'
+		git log --pretty=oneline --author=<your name>
+		git log --pretty=oneline --all
 
 2/4/14
 
-dir is the equivalent to ls in the cmd window
+	dir is the equivalent to ls in the cmd window
 
-commonly used Python modules:
-sys -- access to exit(), argv, stdin, stdout, ...
-re -- regular expressions
-os -- operating system interface, file system
+	commonly used Python modules:
+	sys -- access to exit(), argv, stdin, stdout, ...
+	re -- regular expressions
+	os -- operating system interface, file system
 
 
 12/30/13
 
-for loops = for each
+	for loops = for each
 
 
 
 
 12/25/13
 
-Started python
-classes start w/ capital letter
+	Started python
+	classes start w/ capital letter
 
-git commands
-	git add <file> (* = all (-hidden))
-	git status = check what is to be moved
-	git commit
-	git push
+	git commands
+		git add <file> (* = all (-hidden))
+		git status = check what is to be moved
+		git commit
+		git push
 
-ls = list
-	-la = long, hidden list
-ln = link
+	ls = list
+		-la = long, hidden list
+	ln = link
 
-officially l33t hax0r.
+	officially l33t hax0r.
 
-vim:
-&& = and
-|| = or (be sure to include double [[]])
+	vim:
+	&& = and
+	|| = or (be sure to include double [[]])
 
-apt-get = package manager, installs certain programs
-sudo = administrative privs (root)
-example: sudo apt-get install curl
-argument = user input
+	apt-get = package manager, installs certain programs
+	sudo = administrative privs (root)
+	example: sudo apt-get install curl
+	argument = user input
 
-in shell programming (vim):
--eq = equals
--ne = not equal to
--lt = less than
--le = less or equal
--gt = greater than
--ge = greater/equal
+	in shell programming (vim):
+	-eq = equals
+	-ne = not equal to
+	-lt = less than
+	-le = less or equal
+	-gt = greater than
+	-ge = greater/equal
 
-bash profile
-notes/.bash_profile (need to make sim link from home directory)
-contains custom programs and aliases(shortcut names for servers)
+	bash profile
+	notes/.bash_profile (need to make sim link from home directory)
+	contains custom programs and aliases(shortcut names for servers)
 
 12/24/13
-VIM commands
-:w - saves vim file
-:q - quits
-:wq - save and quit
-u - undo
-gg - top of file
-shift g - bottom of file
-/<text> - search, n - next result, shift n - previous result
-ctrl d - pg down
-ctrl u - pg up
-dd - deletes line with cursor
+	VIM commands
+	:w - saves vim file
+	:q - quits
+	:wq - save and quit
+	u - undo
+	gg - top of file
+	shift g - bottom of file
+	/<text> - search, n - next result, shift n - previous result
+	ctrl d - pg down
+	ctrl u - pg up
+	dd - deletes line with cursor
 
-Terminal commands
-tab - autocomplete
-cd - change directory
-cd ~ - brings home
-cd .. - back one dir
-!! - repeats last command (pasting last command)
-vim - opens vim program, then name either opens or creates new
-ls - lists directory contents 
-clear - clears terminal window
-ssh <ip> - connects to ip
-pwd - shows current location
-find (file names)
-	. - in current directory
-	find . -name,-f(file) "*<text>" (star allows all files containing <text> to be shown)
-man - manual
-grep - finds text within files
-	grep . "<text>"
-	grep . -r "<text>*" (recursive -r searches in folders as well)
+	Terminal commands
+	tab - autocomplete
+	cd - change directory
+	cd ~ - brings home
+	cd .. - back one dir
+	!! - repeats last command (pasting last command)
+	vim - opens vim program, then name either opens or creates new
+	ls - lists directory contents 
+	clear - clears terminal window
+	ssh <ip> - connects to ip
+	pwd - shows current location
+	find (file names)
+		. - in current directory
+		find . -name,-f(file) "*<text>" (star allows all files containing <text> to be shown)
+	man - manual
+	grep - finds text within files
+		grep . "<text>"
+		grep . -r "<text>*" (recursive -r searches in folders as well)
