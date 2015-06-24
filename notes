@@ -1,3 +1,9 @@
+6/24/15
+	famous notes:
+		origin vs align
+		origin is the "anchor" point of the surface - commonly 0,0 (bottom left corner) or 0.5,0.5 (in the center)
+		both are on a scale from 0 to 1
+
 6/23/15
 	famo.us - awesome way to get around the DOM for faster rendering of physics
 
