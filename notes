@@ -1,3 +1,18 @@
+7/23/15
+	EMBER
+		Handlebars (template) - each is backed by a model
+			template auto-updates if model changes
+			templates can contain:
+				Expressions - take info from model and put into HTML
+				Outlets - placeholders for other templates
+				Components - custom HTML elements clean up repetition
+		Router - translates a URL into series of nested templates(backed by models)
+			This means that, at any point, users are able to share the URL of your app. When someone clicks the link, they reliably see the same content as the original user.
+		Components 
+			custom HTML tag whose behavior is implemented in Javascript
+
+
+
 6/27/15
 	famous add dependency issue
 6/24/15
