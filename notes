@@ -1,6 +1,18 @@
 10/18/16
 	second day of galvanize - terminal commands
 
+	apple+f3 shows desktop
+
+	shell commands
+		- is the flag
+		-l list
+		-lh list with human friendly file sizes
+		-lah list w/ human friendly + hidden files
+
+	absolute path starts with /
+	relative path starts with a directory
+
+
 10/8/16
 	Learning python - galvanize data science course starts Dec 5th
 		python uses indentation for blocks instead of curly brackets (4 spaces)
