@@ -1,3 +1,5 @@
+10/18/16
+	second day of galvanize - terminal commands
 
 10/8/16
 	Learning python - galvanize data science course starts Dec 5th
@@ -10,7 +12,7 @@
 	Meeh
 
 1/3/16
-	Pedernales falls with the fam 
+	Pedernales falls with the fam
 
 1/2/16
 	Commit to git
@@ -33,7 +35,7 @@
 		char (a character, 2 bytes)
 		boolean (true or false, 1 byte)
 	Java is a strong typed language, which means variables need to be defined before we use them.
-	
+
 
 7/23/15
 	EMBER
@@ -45,7 +47,7 @@
 				Components - custom HTML elements clean up repetition
 		Router - translates a URL into series of nested templates(backed by models)
 			This means that, at any point, users are able to share the URL of your app. When someone clicks the link, they reliably see the same content as the original user.
-		Components 
+		Components
 			custom HTML tag whose behavior is implemented in Javascript
 
 
@@ -101,13 +103,13 @@
 
 5/22/15
 	TASK RUNNERS & BUILD SYSTEMS
-		like gulp, 
+		like gulp,
 
 		must consider:
 			environment code is run in
 			database
 
-			
+
 	HEROKU
 		heroku create - creates git remote
 
@@ -133,7 +135,7 @@
 	A FILTER formats the value of an expression
 
 5/18/15
-	
+
 	ENCRYPTION : constantly evolving
 
 	SQL lite - useful to reduce friction
@@ -142,7 +144,7 @@
 		bcrypt is slow by design
 
 5/15/15
-	
+
 	VARIABILITY MUST BE EXPRESSED IN NUMBER OF ROWS- NOT COLUMNS
 
 	SCHEMA DESIGN
@@ -152,8 +154,8 @@
 
 
 
-	Key-value/Document store: 
-	
+	Key-value/Document store:
+
 	Graph databases - a lot of web apps need this type (social)
 		nodes, edges
 			nodes - bundles of info
@@ -169,7 +171,7 @@
 	sharding must be done with a method so that you know where segments of data are being sharded to
 
 	BE SCRIBEY WITH DATABASE SYSTEMS  -  specifically which DB's are slow
-	
+
 	atamicity - all or nothing ? esque (bank database problem - don't wanna update halves of data at the time) - we can bundle together and trust all interactions or they wont occur
 			http://en.wikipedia.org/wiki/Atomicity_%28database_systems%29
 
@@ -189,7 +191,7 @@
 
     SQL - (Postgres, MySQL)
       good for joining relationships between data
-      has id's for each type of entry 
+      has id's for each type of entry
       join querey (grab all users who are members of purple penguins)
         SELECT people.name FROM people JOIN clubs ON person_id
       one query for all data (with built relationships)
@@ -220,7 +222,7 @@
 
 5/8/15
 
-	Questions: 
+	Questions:
 		purpose of wrapping code modules in anonymous functions?
 		User stories?
 		m.prop will convert the target into a function that acts as a storage?
@@ -230,7 +232,7 @@
 
 		m('button', )
 
-		DOM Diffing - check data to see what changed, then only updates relevant DOM elements 
+		DOM Diffing - check data to see what changed, then only updates relevant DOM elements
 		(as opposed to the "flicker" effect which empties entire page and re-renders)
 
 		Mithril: Virtual DOM - DOM Diffing built-in
@@ -282,7 +284,7 @@
 	HTTP: server's name handled by DNS(domain name service)
 		upon entering google.com in browser, client makes a request to DNS which points to server
 		this request is known as an HTTP request (HTTP GET / HOST: google.com)
-		HTTP Response 
+		HTTP Response
 			everything sent back and forth is just text
 			2 most important things:
 				-body
@@ -294,7 +296,7 @@
 		GET /
 		GET /profile
 		GET /users/timmy
-		
+
 		POST /profile
 		title=my%20Post&author=me
 		{ "title": "my Post", "author": "me" }
@@ -302,7 +304,7 @@
 		PUT /profile
 			-updates
 
-		DELETE 
+		DELETE
 			usually req's authorization
 
 		GET /profile and POST /profile are different endpoints(method + url)
@@ -311,7 +313,7 @@
 	D3 sprint beginning
 		D3 bindings can accept callback fn's in data attribute that it auto generates(jquery cannot)
 		D3 can add more data to the page than there are nodes to attach the data to
-		general update pattern (enter/exit) 
+		general update pattern (enter/exit)
 			enter subselects data/node pairs that have no nodes and will designate placement based off of parent
 			append needs an argument for what to make
 			.text(function(d) {return 'hello ' + d}) // d will be data in existing node
@@ -357,7 +359,7 @@
 		stack (LIFO - last in first out, only access to the "plate" on top):
 			methods: push, pop, peek
 
-	shift() on an array is inefficient (with long arrays) because it needs to reassign all 
+	shift() on an array is inefficient (with long arrays) because it needs to reassign all
 
 	*Also added sublime command to terminal ()
 
@@ -460,7 +462,7 @@
 	cd .. - back one dir
 	!! - repeats last command (pasting last command)
 	vim - opens vim program, then name either opens or creates new
-	ls - lists directory contents 
+	ls - lists directory contents
 	clear - clears terminal window
 	ssh <ip> - connects to ip
 	pwd - shows current location
