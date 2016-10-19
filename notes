@@ -1,3 +1,12 @@
+10/19/16
+
+	vocab
+		identifier - variable names
+		keywords (function) - cant have variables named after keywords
+		operators - plus/minus/modulus/equals + words like in, instanceof, new
+		literals
+
+
 10/18/16
 	second day of galvanize - terminal commands
 
