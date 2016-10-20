@@ -1,10 +1,25 @@
-10/19/16
+10/20/16
+	Javascript vs ECMAscript
+		ECMAscript - standardized specification of JavaScript
 
+		immutable - means it cant be changed
+
+		4.0 evaluates to just 4
+
+		substring - substr(firstIndex, #of letters)
+		'melissa'.substr(2, 2); // 'li'
+		
+10/19/16
 	vocab
 		identifier - variable names
 		keywords (function) - cant have variables named after keywords
 		operators - plus/minus/modulus/equals + words like in, instanceof, new
-		literals
+			operand - the quantity on which an operation is done
+		literals vs variables
+		expression - something that results in a value (1+1)
+		statement - block of code that does something (var x = 1+1)
+
+		javascript first scans for variables and assigns them to undefined, then it executes code
 
 
 10/18/16
