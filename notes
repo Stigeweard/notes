@@ -1,3 +1,6 @@
+10/21/16
+	typeof will return object for arrays, use the "isArray" method to check instead
+
 10/20/16
 	Javascript vs ECMAscript
 		ECMAscript - standardized specification of JavaScript
@@ -8,7 +11,13 @@
 
 		substring - substr(firstIndex, #of letters)
 		'melissa'.substr(2, 2); // 'li'
-		
+
+		null vs undefined
+			new variables undefined by default
+			null is an intentional absence of data
+
+		initialize variables with null if you have intentions for changing them later - BEST PRACTICE
+
 10/19/16
 	vocab
 		identifier - variable names
