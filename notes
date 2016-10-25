@@ -1,5 +1,17 @@
+10/25/16
+  never use css id's for styling - use them for javascript hooks
+
+10/24/16
+	starting HTML
+
 10/21/16
 	typeof will return object for arrays, use the "isArray" method to check instead
+	refresh on splice/slice
+
+	function.length will show how many inputs are on the function
+
+	javascript first searches your code for variables/functions and assigns them to undefined. it then assigns values and moves from top to bottom
+
 
 10/20/16
 	Javascript vs ECMAscript
