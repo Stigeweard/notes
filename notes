@@ -1,6 +1,35 @@
 10/25/16
   never use css id's for styling - use them for javascript hooks
 
+  visibility: hidden; -hides element but keeps it's place
+  display: none; -removes element from DOM
+
+  .a {
+  padding: 23px;
+  background-color:  #FFED5D;
+  margin-left: auto;
+  margin-right: auto;
+  width: 47.5%;
+  font-size: 18px;
+  }
+  .a * {   //// .a * selects all children, .a > * will select only direct children
+    padding:23px;
+  }
+  .b {
+    /*padding: 23px;*/
+    background-color:  #FF7050;
+  }
+
+  .c {
+    /*padding: 23px;*/
+    background-color:  #222;
+  }
+
+  .d {
+    /*padding: 23px;*/
+    background-color:  #7BBADE;
+  }
+
 10/24/16
 	starting HTML
 
