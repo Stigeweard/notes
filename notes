@@ -1,3 +1,7 @@
+11/3/16
+  keypress vs keydown
+    keypress is fired when a character is inserted in a "focusable control"
+
 10/28/16
   The C Programming Language - recommended by Paul (gold standard)
     gcc compiler
