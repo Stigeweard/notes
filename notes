@@ -2,6 +2,11 @@
   keypress vs keydown
     keypress is fired when a character is inserted in a "focusable control"
 
+  event.stopPropagation() - stops bubbling up action of an event
+  event.preventDefault() - prevents default action from occurring
+
+  template literals! `${  }` notation within backtics ``
+
 10/28/16
   The C Programming Language - recommended by Paul (gold standard)
     gcc compiler
