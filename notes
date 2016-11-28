@@ -1,3 +1,11 @@
+11/28/16
+
+    how to cleanly update stuff using brew
+        brew update
+        brew outdated
+        brew upgrade ${node}
+        brew cleanup
+
 11/3/16
   keypress vs keydown
     keypress is fired when a character is inserted in a "focusable control"
