@@ -1,3 +1,16 @@
+12/22/16
+    redirect vs render
+        render renders a page (index.html from a get to localhost/)
+        redirect sends a request from / to /something/else
+
+
+12/19/16
+    Promises - ES6 thing so itll always work in node
+        Promise.all([thing, thing2])
+        bluebird is a library that works for promises on front end
+
+
+
 11/28/16
 
     how to cleanly update stuff using brew
